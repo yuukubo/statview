@@ -1,0 +1,27 @@
+<%= form_for @status do |f| %>
+
+<p>
+  <%= f.label :status %><br>
+  <%= f.text_field :status %>
+  <% if @status.errors.any? %>
+  <%= @status.errors.messages[:status][0] %>
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :color %><br>
+  <%= f.text_field :color %>
+  <% if @status.errors.any? %>
+  <%= @status.errors.messages[:color][0] %>
+  <% end %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<p>
+  ## using partial ##
+</p>
+
+<% end %>

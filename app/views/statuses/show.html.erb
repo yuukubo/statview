@@ -1,0 +1,18 @@
+<h1><%= @status.status %></h1>
+
+<ul>
+
+<% @status.members.each do |member| %>
+<li>
+  <%= member.name %>
+  <%= link_to "[Delete]", status_member_path(member.status_id, member.id), method: :delete, data:  {confirm: "are you sure?" } %>
+</li> 
+
+<% end %>
+
+<li>
+  <%= form_for [@status, @status.members.build] do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+  <% end %>
+</ul>

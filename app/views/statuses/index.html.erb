@@ -1,0 +1,53 @@
+<h1>Statuses</h1>
+
+<ul>
+
+  <% @statuses.each do |stat| %>
+  <li>
+    <%= link_to stat.status, status_path(stat.id) %>
+    <%= link_to "[Edit]", edit_status_path(stat.id) %>
+    <%= link_to "[Delete]", status_path(stat.id), method: :delete, data:  {confirm: "are you sure?" } %></li> 
+  <ul>
+  <li><%= stat.color %></li>
+  </ul>
+
+  <% end %>
+
+</ul>
+
+<p><%= link_to "Add New Status", new_status_path %></p>
+
+<hr>
+
+<style>
+    table {
+        border-collapse:    collapse;
+    }
+    td, th {
+        padding:    10px;
+        border: 2px solid dimgray;
+    }
+    th {
+        background: cornsilk;
+    }
+</style>
+ 
+<table>
+    <tr>
+        <th>Aチーム</th>
+        <th>Ｂチーム</th>
+        <th>Ｃチーム</th>
+    </tr>
+    <tr>
+        <td style="background:#00f;"><font color="#ffffff">alice</td>
+        <td style="background:#0f0;">merry</td>
+        <td style="background:#f00;">aya</td>
+    </tr>
+    <tr>
+        <td style="background:#00f;"><font color="#ffffff">mima</td>
+        <td style="background:#000;"><font color="#ffffff">yumemi</td>
+        <td style="background:#444;">eren</td>
+    </tr>
+</table>
+
+<hr>
